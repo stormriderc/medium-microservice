@@ -13,10 +13,10 @@ public class CustomerRequestMapper implements Mapper<CustomerRequest, Customer> 
             return null;
         }
 
-        Customer customer = new Customer().builder()
-                .document(input.getDocument())
-                .customerCode(input.getCustomerCode())
-                .companyName(input.getCompanyName()).build();
+        Customer customer = new Customer();
+        customer.setDocument(input.getDocument());
+        customer.setCustomerCode(input.getCustomerCode());
+        customer.setCompanyName(input.getCompanyName());
 
         return customer;
     }
